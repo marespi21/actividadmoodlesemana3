@@ -67,9 +67,6 @@ class CRUD:
         except Exception as e:
             print(f"Error inesperado: {e}")
 
-    # --------------------------------------
-    # Cargar CSV a inventario (lista)
-    # --------------------------------------
     def cargar_csv(self, ruta):
         inventario_cargado = []
         filas_invalidas = 0

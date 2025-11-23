@@ -1,10 +1,12 @@
 
 from servicios import actualizar_producto, agregar_producto, buscar_producto, calcular_estadisticas, eliminar_producto, mostrar_productos
-from Archivos import guardar_csv, cargar_csv 
+from Archivos import guardar_csv, cargar_csv
+# CRUD es una clase, por tanto cuando importas la clase, no necesitas importar las funiones que estan en ella
+# como métodos, en este sentido la linea anterior por eso la comento, cuando requieras guardar o cargar utiliza la clase
+
+
 from Archivos import CRUD
 
-crud= CRUD()
-crud.crear_archivo(archivo.csv)
 
 def integrar_carga(inventario):
     ruta = input("Ruta del archivo CSV a cargar: ")
@@ -46,6 +48,9 @@ def integrar_carga(inventario):
 
 
 inventario = []
+
+# cuando se utilizar esta funcion como la funcion main, hace falta una linea al final del archivo
+# __main__ revisa bien la forma, por eso al final hago llamado a la funcion que estas definiendo
 
 def main_menu():
 
@@ -100,4 +105,8 @@ def main_menu():
          print("ERROR: Ingresa un número válido")
         
         
+main_menu()  
+crud= CRUD()
+crud.crear_archivo("archivo.csv")
+      
 
